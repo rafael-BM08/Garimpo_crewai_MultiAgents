@@ -1,0 +1,70 @@
+
+tarefa_pesquisa:
+  description: >
+    pesquisar os produtos mais vendidos em alta em {plataforma}, 
+    (se {categoria} estiver vazio, pesquisar em geral). Use SOMENTE preços que aparecem nos resultados da busca.
+    Se um produto não tiver preço na busca, escreva "preço não encontrado".
+    Nunca invente preços.
+  expected_output: >
+    Uma lista com 8 produtos, cada um com nome, plataforma,
+    faixa de preço e o motivo de estar em alta.
+  agent: pesquisar_produtos
+
+tarefa_avaliacao:
+  description: >
+    Avalie os produtos da pesquisa, escolha EXATAMENTE 3 e dê uma nota de
+    0 a 10 para cada um, justificando a nota. Ordene do melhor para o pior.
+  expected_output: >
+    EXATAMENTE 3 produtos, cada um com nome, nota e justificativa
+  agent: avaliador_produtos
+  context: 
+    - tarefa_pesquisa
+
+
+tarefa_tiktok:
+  description: >
+    Para cada um dos 3 produtos do top 3, crie 2 estrategias de divulgação diferentes 
+    para o TikTok. Use somente os produtos do top 3 recebido. Cada estrategia deve ter:
+    titulo chamativo, descrição video e hashtags relevantes para engajamento. Preencha o campo 
+    rede_social com "tiktok".
+  expected_output: >
+    6 estratégias para TikTok (3 produtos x 2), cada uma com produto,
+    título para leads, descrição do vídeo e lista de hashtags com #.
+  agent: marketing_digital
+  context: 
+    - tarefa_avaliacao
+
+tarefa_pinterest:
+  description: >
+    Para cada um dos 3 produtos do top 3, crie 2 estrategias de divulgação diferentes 
+    para o Pinterest. Use somente os produtos do top 3 recebido. Cada estrategia deve ter:
+    titulo chamativo, descrição de imagem e hashtags relevantes para engajamento. Preencha o 
+    campo rede_social com "Pinterest".
+  expected_output: >
+    6 estratégias para Pinterest (3 produtos x 2), cada uma com produto,
+    título para leads, descrição da imagem e lista de hashtags com #.
+  agent: marketing_digital
+  context: 
+    - tarefa_avaliacao
+
+tarefa_instagram:
+  description: >
+    Para cada um dos 3 produtos do top 3, crie 2 estrategias de divulgação diferentes 
+    para o Instagram. Use somente os produtos do top 3 recebido. Cada estrategia deve ter:
+    titulo chamativo, descrição video e hashtags relevantes para engajamento. Preencha o campo 
+    rede_social com "Instagram".
+  expected_output: >
+    6 estratégias para Instagram (3 produtos x 2), cada uma com produto,
+    título para leads, descrição do vídeo e lista de hashtags com #.
+  agent: marketing_digital
+  context: 
+    - tarefa_avaliacao
+
+
+
+
+
+
+
+
+

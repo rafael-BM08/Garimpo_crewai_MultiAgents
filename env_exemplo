@@ -1,0 +1,4 @@
+MODEL=modelo IA
+OPENAI_API_KEY="chave"
+TAVILY_API_KEY="chave"
+CREWAI_TRACING_ENABLED=false

@@ -1,0 +1,34 @@
+# Segredos (NUNCA suba isso)
+.env
+.env.*
+!.env.example
+
+# Ambiente virtual
+.venv/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Resultados gerados pela crew
+resultados/
+
+# Banco/memória local do CrewAI
+.crewai/
+db/
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

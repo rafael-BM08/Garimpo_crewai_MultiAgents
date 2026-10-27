@@ -1,0 +1,26 @@
+[project]
+name = "garimpo_afiliado"
+version = "0.1.0"
+description = "garimpo_afiliado using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=1.15.28,<2.0.0",
+    "tavily-python>=0.8.5",
+]
+
+[project.scripts]
+garimpo_afiliado = "garimpo_afiliado.main:run"
+run_crew = "garimpo_afiliado.main:run"
+train = "garimpo_afiliado.main:train"
+replay = "garimpo_afiliado.main:replay"
+test = "garimpo_afiliado.main:test"
+run_with_trigger = "garimpo_afiliado.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+project_id = "9283d46b-d693-49f0-b684-2bdf42bfce3c"
